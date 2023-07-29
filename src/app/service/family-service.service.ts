@@ -35,7 +35,7 @@ export class FamilyServiceService {
   }
   ReadById(id: number): Observable<Family> {
 
-    return this.http.get<Family>(this.baseUrl + 'api/family/id/' + id);
+    return this.http.get<Family>(this.baseUrl + 'api/family/' + id);
 
   }
   Delete(id: number): Observable<Family> {
