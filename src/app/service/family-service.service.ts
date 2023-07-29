@@ -16,9 +16,31 @@ export class FamilyServiceService {
 
   constructor(private http: HttpClient) { }
 
+  Create(model: Family): Observable<Family> {
+
+    return this.http.post<Family>(this.baseUrl + 'api/family/create', model);
+
+  }
+
+  Update(model: Family): Observable<Family> {
+
+    return this.http.put<Family>(this.baseUrl + 'api/family/update', model);
+
+  }
+
   Read(): Observable<Family[]> {
 
     return this.http.get<Family[]>(this.baseUrl + 'api/family/read');
+
+  }
+  ReadById(id: number): Observable<Family> {
+
+    return this.http.get<Family>(this.baseUrl + 'api/family/id/' + id);
+
+  }
+  Delete(id: number): Observable<Family> {
+
+    return this.http.delete<Family>(this.baseUrl + 'api/family/id/' + id);
 
   }
 }

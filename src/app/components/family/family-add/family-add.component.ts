@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Family } from 'src/app/models/Family';
+import { FamilyServiceService } from 'src/app/service/family-service.service';
 
 @Component({
   selector: 'app-family-add',
@@ -19,11 +21,24 @@ export class FamilyAddComponent {
 
   };
 
-  constructor() { }
+  constructor(private familyService: FamilyServiceService, private route:Router) {
 
-  AddFamily(){
+  }
 
-    console.log("data", this.Addmodel)
+
+  AddFamily() {
+
+    this.familyService.Create(this.Addmodel)
+      .subscribe({
+
+        next: (result) => {
+          this.route.navigate(['family-pagination']);
+        },
+        error: (response) => {
+          console.log("error: ", response);
+        }
+
+      })
   }
 
 }
