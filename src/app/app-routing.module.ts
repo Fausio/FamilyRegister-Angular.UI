@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FamilyPaginationComponent } from './components/family/family-pagination/family-pagination.component';
+import { FamilyAddComponent } from './components/family/family-add/family-add.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,10 @@ const routes: Routes = [
   {
     path: 'family-pagination',
     component: FamilyPaginationComponent
+  },
+  {
+    path: 'family-add',
+    component: FamilyAddComponent
   }
 
 ];

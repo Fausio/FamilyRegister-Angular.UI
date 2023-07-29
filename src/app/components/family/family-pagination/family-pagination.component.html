@@ -1,39 +1,40 @@
-
 <h3>
     Famílias
 </h3>
 
-<hr/>
+<hr />
+<div class="table-responsive ">
+    <div *ngIf="families && families.length > 0">
 
-<div class="row" *ngIf="families && families.length > 0">
+        <table class="table table-hover ">
+            <thead>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Endereço</th>
+                <th scope="col">Numero de membros</th>
+                <th scope="col">Fortuna</th>
+                <th scope="col">Operações</th>
+            </thead>
 
-    <table>
-        <thead>
-            <th scope="col">#</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Endereço</th>
-            <th scope="col">Numero de membros</th>
-            <th scope="col">Fortuna</th>
-            <th scope="col">Operações</th>
-        </thead>
+            <tbody>
 
-        <tbody>
+                <tr *ngFor="let item of families">
 
-            <tr *ngFor="let item of families">
+                    <td scope="row">{{item.id}}</td>
+                    <td scope="row">{{item.name}}</td>
+                    <td scope="row">{{item.address}}</td>
+                    <td scope="row">{{item.members}}</td>
+                    <td scope="row">{{item.money}}</td>
+                    <td scope="row"> <button class="btn btn-sm btn-primary">View</button></td>
 
-                <td scope="row">{{item.id}}</td>
-                <td scope="row">{{item.name}}</td>
-                <td scope="row">{{item.address}}</td>
-                <td scope="row">{{item.members}}</td>
-                <td scope="row">{{item.money}}</td>
-                <td scope="row"> <button class="btn btn-sm btn-primary">View</button></td>
+                </tr>
 
-            </tr>
+            </tbody>
+        </table>
 
-        </tbody>
-    </table>
-
+    </div>
 </div>
+
 
 <div class="row" *ngIf="!families || families.length <= 0">
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Family } from 'src/app/models/Family';
+import { FamilyServiceService } from 'src/app/service/family-service.service';
 
 @Component({
   selector: 'app-family-pagination',
@@ -10,7 +11,7 @@ export class FamilyPaginationComponent implements OnInit {
 
 
   families: Family[] = [
-   
+
     {
       id: 1,
       name: "",
@@ -33,28 +34,28 @@ export class FamilyPaginationComponent implements OnInit {
 
   ];
 
-  constructor() {
+  constructor(private familyService: FamilyServiceService) {
 
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.ReadFromAPI();
   }
 
 
 
 
-  private seedFamily() {
+  private ReadFromAPI() {
 
-    for (let index = 0; index < 100; index++) {
-
-     /*  this.families.push(new Family(){
-        id: index + 1,
-        name: 'xsxs' + index,
-        money: 678,
-      }) */
-
-    }
+    this.familyService.Read()
+      .subscribe({
+        next: (result) => {
+          this.families = result;
+        },
+        error: (response) => {
+          console.log("Erro: ", response);
+        }
+      })
 
   }
 
