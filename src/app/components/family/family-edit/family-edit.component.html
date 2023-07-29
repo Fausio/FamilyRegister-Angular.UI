@@ -1,1 +1,57 @@
-<p>family-edit works!</p>
+<h3>
+    Editar Famílias
+</h3>
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form #form="ngForm" (ngSubmit)="UpdateFamily()">
+    
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" 
+                        id="nome" 
+                        name="name" 
+                        [(ngModel)]="EditModel.name">
+            </div>
+        
+            <div class="mb-3">
+                <label for="email" class="form-label">e-Mail</label>
+                <input type="email" class="form-control" id="email"
+                name="email" 
+                [(ngModel)]="EditModel.email">
+            </div>
+        
+            <div class="mb-3">
+                <label for="phone" class="form-label">Telefone</label>
+                <input type="text" class="form-control" id="phone"
+                name="phone" 
+                [(ngModel)]="EditModel.phone">
+            </div>
+        
+            <div class="mb-3">
+                <label for="address" class="form-label">Endereço</label>
+                <input type="text" class="form-control" id="address"
+                name="address" 
+                [(ngModel)]="EditModel.address">
+            </div>
+        
+            <div class="mb-3">
+                <label for="money" class="form-label">Fortuna</label>
+                <input type="text" class="form-control" id="money"
+                name="money" 
+                [(ngModel)]="EditModel.money">
+            </div>
+        
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Tem mais de uma casa ?</label>
+            </div>
+            <button type="submit" class="btn btn-success btn-sm">Actualizar</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+</div>
+

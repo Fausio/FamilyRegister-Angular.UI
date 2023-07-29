@@ -2,48 +2,54 @@
     Adicionar Famílias
 </h3>
 <hr />
-
-<form #form="ngForm" (ngSubmit)="AddFamily()">
+<div class="row">
+    <div class="col-md-6">
+        <form #form="ngForm" (ngSubmit)="AddFamily()">
     
-    <div class="mb-3">
-        <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" 
-                id="nome" 
-                name="name" 
-                [(ngModel)]="Addmodel.name">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" 
+                        id="nome" 
+                        name="name" 
+                        [(ngModel)]="Addmodel.name">
+            </div>
+        
+            <div class="mb-3">
+                <label for="email" class="form-label">e-Mail</label>
+                <input type="email" class="form-control" id="email"
+                name="email" 
+                [(ngModel)]="Addmodel.email">
+            </div>
+        
+            <div class="mb-3">
+                <label for="phone" class="form-label">Telefone</label>
+                <input type="text" class="form-control" id="phone"
+                name="phone" 
+                [(ngModel)]="Addmodel.phone">
+            </div>
+        
+            <div class="mb-3">
+                <label for="address" class="form-label">Endereço</label>
+                <input type="text" class="form-control" id="address"
+                name="address" 
+                [(ngModel)]="Addmodel.address">
+            </div>
+        
+            <div class="mb-3">
+                <label for="money" class="form-label">Fortuna</label>
+                <input type="text" class="form-control" id="money"
+                name="money" 
+                [(ngModel)]="Addmodel.money">
+            </div>
+        
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Tem mais de uma casa ?</label>
+            </div>
+            <button type="submit" class="btn btn-success btn-sm">Adicionar</button>
+        </form>
     </div>
+    <div class="col-md-6">
 
-    <div class="mb-3">
-        <label for="email" class="form-label">e-Mail</label>
-        <input type="email" class="form-control" id="email"
-        name="email" 
-        [(ngModel)]="Addmodel.email">
     </div>
-
-    <div class="mb-3">
-        <label for="phone" class="form-label">Telefone</label>
-        <input type="text" class="form-control" id="phone"
-        name="phone" 
-        [(ngModel)]="Addmodel.phone">
-    </div>
-
-    <div class="mb-3">
-        <label for="address" class="form-label">Endereço</label>
-        <input type="text" class="form-control" id="address"
-        name="address" 
-        [(ngModel)]="Addmodel.address">
-    </div>
-
-    <div class="mb-3">
-        <label for="money" class="form-label">Fortuna</label>
-        <input type="text" class="form-control" id="money"
-        name="money" 
-        [(ngModel)]="Addmodel.money">
-    </div>
-
-    <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Tem mais de uma casa ?</label>
-    </div>
-    <button type="submit" class="btn btn-success btn-sm">Adicionar</button>
-</form>
+</div>

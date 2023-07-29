@@ -15,7 +15,14 @@ export class FamilyEditComponent implements OnInit {
 
   }
 
-  EditModel: Family | undefined;
+  EditModel: Family  ={
+    id: 0,
+    name: '',
+    phone: '',
+    money: 0,
+    address: '',
+    email: ''
+  }
 
 
   ngOnInit(): void {
@@ -34,6 +41,11 @@ export class FamilyEditComponent implements OnInit {
           }
         }
       })
+  }
+
+
+  UpdateFamily(){
+
   }
 
   ReadById(id: number) {
