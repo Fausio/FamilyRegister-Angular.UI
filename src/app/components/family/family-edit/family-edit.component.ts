@@ -45,7 +45,7 @@ export class FamilyEditComponent implements OnInit {
 
 
   UpdateFamily(){
-
+console.log(this.EditModel)
   }
 
   ReadById(id: number) {

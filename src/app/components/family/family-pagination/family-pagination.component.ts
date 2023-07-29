@@ -10,29 +10,7 @@ import { FamilyServiceService } from 'src/app/service/family-service.service';
 export class FamilyPaginationComponent implements OnInit {
 
 
-  families: Family[] = [
-
-    {
-      id: 1,
-      name: "",
-      email: '',
-      money: 123,
-      phone: ''
-    },
-    {
-      id: 2,
-      name: "",
-      email: '',
-      money: 456,
-    },
-    {
-      id: 3,
-      name: "",
-      email: '',
-      money: 678,
-    }
-
-  ];
+  families: Family[] = [ ];
 
   constructor(private familyService: FamilyServiceService) {
 
