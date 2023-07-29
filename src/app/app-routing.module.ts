@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FamilyPaginationComponent } from './components/family/family-pagination/family-pagination.component';
 import { FamilyAddComponent } from './components/family/family-add/family-add.component';
+import { FamilyEditComponent } from './components/family/family-edit/family-edit.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'family-add',
     component: FamilyAddComponent
+  },
+  {
+    path: 'family-edit/:id',
+    component: FamilyEditComponent
   }
 
 ];

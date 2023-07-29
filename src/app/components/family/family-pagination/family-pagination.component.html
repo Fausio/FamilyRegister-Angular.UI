@@ -7,7 +7,7 @@
 <div class="table-responsive ">
     <div *ngIf="families && families.length > 0">
 
-        <table class="table table-hover ">
+        <table class="table table-hover table-sm">
             <thead>
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
@@ -19,15 +19,15 @@
 
             <tbody>
 
-                <tr *ngFor="let item of families">
+                <tr *ngFor="let item of families"   >
 
                     <td scope="row">{{item.id}}</td>
                     <td scope="row">{{item.name}}</td>
                     <td scope="row">{{item.address}}</td>
                     <td scope="row">{{item.members}}</td>
                     <td scope="row">{{item.money}}</td>
-                    <td scope="row"> <button class="btn btn-sm btn-outline-dark">View</button></td>
-
+                    <td scope="row"> <button class="btn btn-sm btn-outline-dark" [routerLink]="['family-edit',item.id]" > View</button></td>
+                   <!--  routerLink="/family-edit/"{{item.id}} -->
                 </tr>
 
             </tbody>

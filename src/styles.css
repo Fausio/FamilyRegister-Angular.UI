@@ -1,1 +1,6 @@
-@import "~bootstrap/dist/css/bootstrap.css" 
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.smaller-row {
+    height: 2px;
+    /* Adjust the height as needed */
+}

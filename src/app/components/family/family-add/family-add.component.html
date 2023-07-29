@@ -3,30 +3,42 @@
 </h3>
 <hr />
 
-<form>
+<form #form="ngForm" (ngSubmit)="AddFamily()">
+    
     <div class="mb-3">
         <label for="nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" id="nome">
+        <input type="text" class="form-control" 
+                id="nome" 
+                name="name" 
+                [(ngModel)]="Addmodel.name">
     </div>
 
     <div class="mb-3">
         <label for="email" class="form-label">e-Mail</label>
-        <input type="email" class="form-control" id="email">
+        <input type="email" class="form-control" id="email"
+        name="email" 
+        [(ngModel)]="Addmodel.email">
     </div>
 
     <div class="mb-3">
         <label for="phone" class="form-label">Telefone</label>
-        <input type="text" class="form-control" id="phone">
+        <input type="text" class="form-control" id="phone"
+        name="phone" 
+        [(ngModel)]="Addmodel.phone">
     </div>
 
     <div class="mb-3">
         <label for="address" class="form-label">Endereço</label>
-        <input type="text" class="form-control" id="address">
+        <input type="text" class="form-control" id="address"
+        name="address" 
+        [(ngModel)]="Addmodel.address">
     </div>
 
     <div class="mb-3">
         <label for="money" class="form-label">Fortuna</label>
-        <input type="text" class="form-control" id="money">
+        <input type="text" class="form-control" id="money"
+        name="money" 
+        [(ngModel)]="Addmodel.money">
     </div>
 
     <div class="mb-3 form-check">

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { FamilyPaginationComponent } from './components/family/family-pagination/family-pagination.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FamilyAddComponent } from './components/family/family-add/family-add.component';
+import { FamilyEditComponent } from './components/family/family-edit/family-edit.component';
+import { FormsModule } from '@angular/forms';
 
  
 
@@ -13,12 +15,15 @@ import { FamilyAddComponent } from './components/family/family-add/family-add.co
   declarations: [
     AppComponent,
     FamilyPaginationComponent,
-    FamilyAddComponent
+    FamilyAddComponent,
+    FamilyEditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
