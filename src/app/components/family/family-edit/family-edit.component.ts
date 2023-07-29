@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Family } from 'src/app/models/Family';
 import { FamilyServiceService } from 'src/app/service/family-service.service';
 
@@ -11,7 +11,7 @@ import { FamilyServiceService } from 'src/app/service/family-service.service';
 export class FamilyEditComponent implements OnInit {
 
 
-  constructor(private familyService: FamilyServiceService, private activeRoute: ActivatedRoute) {
+  constructor(private familyService: FamilyServiceService, private activeRoute: ActivatedRoute, private route:Router) {
 
   }
 
@@ -45,7 +45,17 @@ export class FamilyEditComponent implements OnInit {
 
 
   UpdateFamily(){
-console.log(this.EditModel)
+    this.familyService.Update(this.EditModel)
+    .subscribe({
+
+      next: (result) => {
+        this.route.navigate(['family-pagination']);
+      },
+      error: (response) => {
+        console.log("error: ", response);
+      }
+
+    })
   }
 
   ReadById(id: number) {

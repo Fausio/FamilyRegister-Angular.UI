@@ -40,7 +40,7 @@ export class FamilyServiceService {
   }
   Delete(id: number): Observable<Family> {
 
-    return this.http.delete<Family>(this.baseUrl + 'api/family/id/' + id);
+    return this.http.delete<Family>(this.baseUrl + 'api/family/' + id);
 
   }
 }

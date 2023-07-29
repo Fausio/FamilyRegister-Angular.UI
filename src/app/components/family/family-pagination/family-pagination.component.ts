@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Family } from 'src/app/models/Family';
 import { FamilyServiceService } from 'src/app/service/family-service.service';
 
@@ -9,8 +9,9 @@ import { FamilyServiceService } from 'src/app/service/family-service.service';
 })
 export class FamilyPaginationComponent implements OnInit {
 
-
-  families: Family[] = [ ];
+  @ViewChild('closebutton') closebutton: any;
+  families: Family[] = [];
+  selectFamilyIdToDelete: number = 0;
 
   constructor(private familyService: FamilyServiceService) {
 
@@ -35,6 +36,26 @@ export class FamilyPaginationComponent implements OnInit {
         }
       })
 
+  }
+
+
+  selectFamilyToDelete(id: number) {
+    this.selectFamilyIdToDelete = id;
+  }
+
+
+  FamilyToDelete() {
+    this.familyService.Delete(this.selectFamilyIdToDelete)
+      .subscribe({
+        next: (result) => {
+          this.ReadFromAPI();
+        },
+        error: (response) => {
+          console.log("Erro into FamilyToDelete(): ", response);
+        }
+      })
+
+    this.closebutton.nativeElement.click();
   }
 
 }
